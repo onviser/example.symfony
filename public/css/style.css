@@ -1,0 +1,92 @@
+/* modal */
+.modal-background {
+    box-sizing: border-box;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(51, 51, 51, 0.9);
+    transition: .3s all;
+    z-index: 10;
+}
+
+.modal-wrapper {
+    box-sizing: border-box;
+    max-width: 1190px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+}
+
+.modal {
+    background: #ffffff;
+    border-radius: 20px;
+    box-sizing: border-box;
+    position: relative;
+    min-height: calc(100vh - 80px);
+    width: 100%;
+}
+
+.modal-button__close {
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTUiIGN5PSIxNSIgcj0iMTQuNSIgZmlsbD0id2hpdGUiIHN0cm9rZT0iIzY2NjY2NiIvPgo8cGF0aCBkPSJNMTUuODE0NiAxNS4wMDAxTDIyLjMyODkgOC40ODQ2NUMyMi41NTM5IDguMjU5NjIgMjIuNTUzOSA3Ljg5MzggMjIuMzI4OSA3LjY2ODc3QzIyLjEwNCA3LjQ0Mzc0IDIxLjczODIgNy40NDM3NCAyMS41MTMyIDcuNjY4NzdMMTQuOTk4OCAxNC4xODQzTDguNDg0NDggNy42Njg3N0M4LjI1OTQ5IDcuNDQzNzQgNy44OTM3MyA3LjQ0Mzc0IDcuNjY4NzQgNy42Njg3N0M3LjQ0Mzc1IDcuODkzOCA3LjQ0Mzc1IDguMjU5NjIgNy42Njg3NCA4LjQ4NDY1TDE0LjE4MzEgMTUuMDAwMUw3LjY2ODc0IDIxLjUxNTZDNy40NDM3NSAyMS43NDA3IDcuNDQzNzUgMjIuMTA2NSA3LjY2ODc0IDIyLjMzMTVDNy43ODE4MiAyMi40NDQ2IDcuOTI5NSAyMi41IDguMDc3MTkgMjIuNUM4LjIyNDg4IDIyLjUgOC4zNzI1NiAyMi40NDM1IDguNDg1NjQgMjIuMzMxNUwxNSAxNS44MTZMMjEuNTE0NCAyMi4zMzE1QzIxLjYyNzQgMjIuNDQ0NiAyMS43NzUxIDIyLjUgMjEuOTIyOCAyMi41QzIyLjA3MDUgMjIuNSAyMi4yMTgyIDIyLjQ0MzUgMjIuMzMxMyAyMi4zMzE1QzIyLjU1NjIgMjIuMTA2NSAyMi41NTYyIDIxLjc0MDcgMjIuMzMxMyAyMS41MTU2TDE1LjgxNjkgMTUuMDAwMUgxNS44MTQ2WiIgZmlsbD0iIzY2NjY2NiIvPgo8L3N2Zz4K") no-repeat center center/30px 30px;
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    z-index: 2;
+}
+
+/* modal message */
+.modal-message {
+    background: #ffffff;
+    box-sizing: border-box;
+    padding: 30px 30px 30px 30px;
+    max-width: 800px;
+    min-height: 500px;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: stretch;
+}
+
+.modal-message h2 {
+    color: #333333;
+    font: bold 36px "PT Sans", Arial, serif;
+    letter-spacing: -0.5px;
+    margin: 0 0 40px 0;
+}
+
+.modal-message p {
+    color: #333333;
+    font: 18px "PT Sans", Arial, serif;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.modal-message .modal-button__close-after-message {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.modal-message .modal-message-bottom {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: stretch;
+}

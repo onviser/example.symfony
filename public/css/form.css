@@ -1,0 +1,5 @@
+/* forms */
+#property_form .required,
+#agreement_form .required {
+    font-weight: bold;
+}

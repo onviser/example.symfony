@@ -1,0 +1,13 @@
+{% extends 'landlord.html.twig' %}
+
+{% block title %}My properties / {{ item.name|e }}{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('css/form.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block body %}
+    <h1>My properties / {{ item.name|e }}</h1>
+    <p><a href="{{ path('app_property') }}">&larr; Back</a></p>
+    {{ form(property_form) }}
+{% endblock %}

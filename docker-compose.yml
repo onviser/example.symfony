@@ -1,0 +1,46 @@
+version: '3'
+
+services:
+  mysql:
+    container_name: mysql
+    image: mysql
+    command: --max_allowed_packet=32505856
+    ports:
+      - 3306:3306
+    volumes:
+      - data-mysql:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: develop
+
+  nginx:
+    container_name: nginx
+    build: ./docker/image/nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./docker/host:/etc/nginx/conf.d
+      - ./:/var/www
+      - ./var/log/nginx:/var/log/nginx
+    links:
+      - php74
+
+  php74:
+    depends_on:
+      - mysql
+    container_name: php74
+    build: ./docker/image/php74
+    links:
+      - mysql:mysql
+    volumes:
+      - ./:/var/www
+
+volumes:
+  data-mysql:
+
+networks:
+  default:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.201.0.0/16

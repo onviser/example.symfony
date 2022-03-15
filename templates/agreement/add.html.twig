@@ -1,0 +1,18 @@
+{% extends 'landlord.html.twig' %}
+
+{% block title %}My agreements / Add new{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/agreement.js') }}"></script>
+{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/form.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block body %}
+    <h1>My agreements / Add new</h1>
+    <p><a href="{{ path('app_agreement') }}">&larr; Back</a></p>
+    {{ form(property_form) }}
+{% endblock %}

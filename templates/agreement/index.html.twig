@@ -1,0 +1,40 @@
+{% extends 'landlord.html.twig' %}
+
+{% block title %}My agreements{% endblock %}
+
+{% block body %}
+    <h1>My agreements</h1>
+    <p><a href="{{ path('app_agreement_add') }}">Add</a></p>
+    {% if items.count > 0 %}
+        <table border="1">
+            <thead>
+            <tr>
+                <td>id</td>
+                <td>identificator</td>
+                <td>landlord</td>
+                <td>property</td>
+                <td>tenant</td>
+                <td>month</td>
+                <td>dates</td>
+                <td></td>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in items %}
+                <tr>
+                    <td>{{ item.id }}</td>
+                    <td><a href="{{ path('app_agreement_edit', {'id': item.id}) }}">{{ item.identificator|e }}</a></td>
+                    <td>{{ item.landlord.email|e }}</td>
+                    <td>{{ item.property.name|e }}</td>
+                    <td>{{ item.tenant|e }}</td>
+                    <td>{{ item.getMonthRentAmount }}</td>
+                    <td>
+                        {{ item.getDateStart|date('Y-m-d') }} &ndash; {% if item.getDateEnd %}{{ item.getDateEnd|date('Y-m-d') }}{% else %}timeless{% endif %}
+                    </td>
+                    <td><a href="{{ path('app_agreement_edit', {'id': item.id}) }}">edit</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+{% endblock %}

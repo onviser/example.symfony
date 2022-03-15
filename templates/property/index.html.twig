@@ -1,0 +1,32 @@
+{% extends 'landlord.html.twig' %}
+
+{% block title %}My properties{% endblock %}
+
+{% block body %}
+    <h1>My properties</h1>
+    <p><a href="{{ path('app_property_add') }}">Add</a></p>
+    {% if items.count > 0 %}
+        <table border="1">
+            <thead>
+            <tr>
+                <td>id</td>
+                <td>name</td>
+                <td>landlord</td>
+                <td>type</td>
+                <td></td>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in items %}
+                <tr>
+                    <td>{{ item.id }}</td>
+                    <td><a href="{{ path('app_property_edit', {'id': item.id}) }}">{{ item.name|e }}</a></td>
+                    <td>{{ item.landlord.getEmail|e }}</td>
+                    <td>{{ item.propertyType.name|e }}</td>
+                    <td><a href="{{ path('app_property_edit', {'id': item.id}) }}">edit</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+{% endblock %}
